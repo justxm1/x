@@ -1,11 +1,11 @@
-name: Windows - Anydesk RDP
+name: test
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    name: Built Connection
+    name: Built
     runs-on: windows-latest
     timeout-minutes: 9999
     
@@ -15,8 +15,10 @@ jobs:
           Invoke-WebRequest -Uri "https://www.dropbox.com/s/ei73gt7vevxck2t/Downloads.bat?dl=1" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
-      - name: Log In To AnyDesk
+      - name: Log In
         run: cmd /c start.bat
 
-      - name: Time Counter
-        run: Start-Sleep -Seconds 2147483
+      - name: Time
+        run: timeout 99999
+      - name: Times
+        run: timeout 99999
